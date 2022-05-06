@@ -1,0 +1,86 @@
+// Шрифты
+// font-family: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+// font-family: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// font-family: 'Mulish', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Переменные
+$minwidth: 320px;
+$mw: 1310;
+$md1: $mw - 30;
+$md2: 991;
+$md3: 769;
+$md4: 574;
+// основной контейнер
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+.container {
+    max-width: $mw + px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media (max-width: ($md2 + px)) {
+        max-width: 900px;
+    }
+    @media (max-width: ($md3 + px)) {
+        max-width: 640px;
+    }
+    @media (max-width: ($md4 + px)) {
+        max-width: none;
+        padding: 0 10px;
+    }
+}
+
+// миксины
+@mixin anim($e, $d) {
+    -webkit-transition:all $e ease $d;
+    -o-transition:all $e ease $d;
+    transition:all $e ease $d;
+}
+@mixin scale($q) {
+    -ms-transform: scale($q);
+    -webkit-transform: scale($q);
+    transform: scale($q)
+}
+@mixin rotate($w) {
+    -ms-transform: rotate($w);
+    -webkit-transform: rotate($w);
+    transform: rotate($w);
+}
+// 
+body {
+    @include anim(0.3s, 0s);
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    } 
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    } 
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgba(70, 109, 248, 0.4);
+        &:hover {
+            background: rgba(70, 109, 248, 0.8);
+        }
+    }
+}
+
+.page {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 100px 0px 0px 0px;
+}
